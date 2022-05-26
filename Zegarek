@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zegar</title>
+</head>
+<body> 
+    <div>
+        <input type="date" id="przeszlosc">
+    </div>
+    <div>
+        <button id="liczymy" onclick="matma()">Oblicz różnicę</button>
+    </div>
+    <div>
+        <p id="zycie"></p>
+        <p id="smierc"></p>
+    </div>
+    <script>
+        var dzisiaj = new Date(); 
+        var podana;
+        var reszta;
+        function matma()
+        {
+            podana = new Date(document.getElementById("przeszlosc").value);
+            reszta = dzisiaj - podana;
+            reszta = document.getElementById("zycie").innerHTML 
+            = Math.floor(reszta / (1000 * 60* 60 * 24));
+            reszta = document.getElementById("smierc").innerHTML 
+            = Math.floor(reszta / (1000 * 60* 60)+ 2);
+        }
+
+    </script>
+
+    
+
+    
+</body>
+</html>
